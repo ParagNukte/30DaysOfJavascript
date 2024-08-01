@@ -19,4 +19,36 @@ const newLi = document.createElement("li");
 newLi.innerHTML = "Item 4";
 
 document.getElementById("myList").appendChild(newLi);
-// Task 5: Change the font size of a paragraph element by class
+
+// Task 5: Select an html and remove it from the DOM
+
+document.getElementById("element-delete").remove();
+
+//Task 6: Select an html and delete the last element of that specific element
+document.body.lastChild.remove();
+
+//Task 7: Select an HTML and change one of its attribute such as src of an image
+
+document
+  .getElementById("image")
+  .setAttribute(
+    "src",
+    "https://media.geeksforgeeks.org/wp-content/uploads/lastchild.png"
+  );
+
+//Task 8: Add and remove a CSS class to/from an HTML element
+
+const listit = document.createElement("li");
+document.body.appendChild(listit).innerHTML = "I m created";
+
+//Task 9 : Add a event listener to a button that changes the text content of a paragraph
+
+addEventListener("click", function () {
+  document.getElementById("paragraph").innerHTML =
+    "task 9 executed by clicking on the button";
+});
+
+addEventListener("mouseover", function () {
+  document.getElementById("paragraph").style.border =
+    "1px solid green";
+});
