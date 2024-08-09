@@ -103,7 +103,7 @@ PromiseTask6n7.then((message) => {
 
 //Task 7 : Use try catch inside asysn fucntion to handle errors from a promise that randomly resolves or rejects, and log a message in the console whether the promise resolves or rejects.
 
-async function fetchDataAsync() {
+async function PrintPromiseTask7() {
   try {
     const message = await PromiseTask6n7;
     console.log("Task 7", message);
@@ -111,4 +111,38 @@ async function fetchDataAsync() {
     console.log("Task 7", error);
   }
 }
-fetchDataAsync();
+PrintPromiseTask7();
+
+const invalidUrl = "https://invalid.url/endpoint";
+
+//Task 8:
+fetch(invalidUrl)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Task 8 :: Data received:", data);
+  })
+  .catch((error) => {
+    console.log("Task 8 :: Fetch error:", error.message);
+  });
+
+//Task 9:
+async function FetchDataTask9() {
+  const url = "https://invalid-url.com/data"; // Invalid URL
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Task 9 :: HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Task 9 :: ", error.message);
+  }
+}
+
+FetchDataTask9();
