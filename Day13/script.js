@@ -51,8 +51,22 @@ console.log(`Task 5 :: Divide: ${utilities.divideNumbers(number1, number2)}`); /
 
 //Task 6 : Install a third-party module (e.g., lodash) using npm. Import and use a function from this module in a script.
 
-import * as _ from './node_modules/lodash/lodash.js';
+import _ from "lodash";
 
 let taskArray = [2, 34, 2, 5, 36, 6, 7, 85, 46];
-const chunkedArray = _.chunk(taskArray,3);
-console.log("Task 6 :: Chunk Array", chunkedArray); // Output)
+const chunkedArray = _.chunk(taskArray, 3);
+console.log("Task 6 :: Chunk Array", chunkedArray);
+
+// Task 7: Install a third-party module (e.g., axios) using npm. Import and use this module to make a network request in a script.
+
+import axios from "axios";
+
+// Make a GET request
+axios
+  .get("https://jsonplaceholder.typicode.com/posts/1")
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
